@@ -93,7 +93,23 @@ def motor_test():
 
     
     GPIO.cleanup()
+
+
+def run_command_list():
+    cmds = [['f', 5, 5, 2],
+            ['f', 0, 5, 1],
+            ['b', 5, 5, 2]]
+
+    for c in cmds:
+        command(c)
+
+    GPIO.cleanup()
+    pwm1.stop()
+    pwm2.stop()
+        
     
 if __name__ == '__main__':
-    motor_test()
+    #motor_test()
     
+
+    GPIO.cleanup()
